@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to the RiotMap application, We hope you'll have a satisfactory experience using our application
