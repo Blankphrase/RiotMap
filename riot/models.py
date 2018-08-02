@@ -20,7 +20,7 @@ class Profile(models.Model):
     """
     user = models.OneToOneField(User)
     datetime = models.DateTimeField()
-    place = models.ForeignKey(Places)
+    place = models.ForeignKey(Places, blank=True)
 
 
     def __str__(self):
@@ -36,7 +36,7 @@ class RiotPronePlaces(models.Model):
 
 
     def __str__(self):
-        return "%s" % (self.place.name)
+        return "%s" % (self.place.name, blank=True)
 
 
 
@@ -47,6 +47,6 @@ class NowRioting(models.Model):
     place = models.ForeignKey(Places)
 
     def __str__(self):
-        return "%s" % (self.place.name)
+        return "%s" % (self.place.name, blank=True)
 
 
