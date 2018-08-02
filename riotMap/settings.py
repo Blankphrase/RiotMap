@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'bootstrap3',
     'riot',
+    'floppyforms',
 ]
 
 MIDDLEWARE = [
