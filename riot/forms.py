@@ -4,6 +4,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from floppyforms.gis import PointWidget, BaseGMapWidget
 from riot.models import Places, Profile, RiotPronePlaces, NowRioting
+from django.forms import Form, FloatField
+class LookupForm(Form):
+    latitude = FloatField()
+    longitude = FloatField()
 
 class CustomPointWidget(PointWidget, BaseGMapWidget):
     class Media:
@@ -12,22 +16,7 @@ class CustomPointWidget(PointWidget, BaseGMapWidget):
 class SignUpForm(UserCreationForm):
     username = forms.CharField(label='First Name',max_length=30)
     email = forms.EmailField(label='Email')
-    password = forms.CharField(widget=forms.PasswordInput())
-    confirm_password=forms.CharField(widget=forms.PasswordInput())
-    class Meta:
-        model=User
-        fields=('username','email','password')
-
-    def clean(self):
-        cleaned_data = super(SignUpForm, self).clean()
-        password = cleaned_data.get("password")
-        confirm_password = cleaned_data.get("confirm_password")
-
-        if password != confirm_password:
-            raise forms.ValidationError(
-                "password and confirm_password does not match"
-            ) 
-
+ 
 class PlacesForm(ModelForm):
     class Meta:
         model = Places

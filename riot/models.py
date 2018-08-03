@@ -36,7 +36,7 @@ class RiotPronePlaces(models.Model):
 
 
     def __str__(self):
-        return "%s" % (self.place.name, blank=True)
+        return "%s" % (self.place.name)
 
 
 
@@ -47,6 +47,6 @@ class NowRioting(models.Model):
     place = models.ForeignKey(Places)
 
     def __str__(self):
-        return "%s" % (self.place.name, blank=True)
+        return "%s" % (self.place.name)
 
 

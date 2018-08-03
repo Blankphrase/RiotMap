@@ -20,7 +20,7 @@
                 </div>
                 <div class="container-fluid">
 
-                    <form action="{%url 'newsToday'%}" method="post">
+                    <form action="{%url 'home'%}" method="post">
                         {%csrf_token%} 
                         {% bootstrap_form SignUpForm layout='inline' %}
                         <input type="submit" value="Subscribe">

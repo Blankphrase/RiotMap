@@ -61,6 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'riotMap.urls'
+LOGIN_REDIRECT='/'
 
 TEMPLATES = [
     {
